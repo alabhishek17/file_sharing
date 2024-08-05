@@ -12,5 +12,8 @@ mongoose
 .catch((err)=>console.log("error in connecting database",err))
 
 app.use(express.json())
+app.use("/",(req,res)=>{
+    res.sendFile(__dirname+"/index.html")
+})
 app.use(filerouter)
 app.listen(7000,()=>console.log(`servrer is connected with port 7000`))
